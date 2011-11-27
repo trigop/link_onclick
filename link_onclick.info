@@ -1,0 +1,29 @@
+name = Link Onclick
+description = "Link OnClick module permite registrar los eventos de click sobre elementos"
+
+; Core version (required)
+core = 7.x
+
+; Package name (see http://drupal.org/node/542202 for a list of names)
+; package = 
+
+; PHP version requirement (optional)
+; php = 5.2
+
+; Loadable code files
+files[] = link_onclick.module
+; files[] = link_onclick.admin.inc
+files[] = link_onclick.js
+
+; Module dependencies
+dependencies[] = statistics
+; dependencies[] = theirmodule (1.2)
+; dependencies[] = anothermodule (>=2.4)
+; dependencies[] = views (3.x)
+
+; Configuration page
+; configure = admin/config/link_onclick
+
+
+; For further information about configuration options, see
+; - http://drupal.org/node/542202
