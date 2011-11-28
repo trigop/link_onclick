@@ -1,17 +1,30 @@
 jQuery(document).ready(function(){
-  var contadorSalvado = function(){
-    jQuery(console.log('Registrado'));
-  }
-  jQuery('#block-views-bloque_los_mas_vistos-block a').click(function() {
-      jQuery.ajax({
-        type: 'POST',
-        url: this.href,
-        dataType: 'json',
-        success: contadorSalvado,
-        data: 'js=1'
-      });
-      jQuery(console.log(this.href));
+  var handler = Drupal.settings.link_onclick.handler;
+  
+  jQuery(handler).click(function() {
+    var classes = jQuery(this).attr('class');
+    
+    var class_array = classes.split(' ');
+    
+    jQuery.each(class_array, function(key, value){
       
-      return false;
+      if (value.indexOf('nid-') >= 0){
+        nid = value.replace('nid-', '');
+	      //jQuery(console.log(nid));
+      }  
+    });
+  
+    //jQuery(console.log(class_array));
+    
+    //jQuery(console.log(jQuery(this).attr('class')));
+    
+    jQuery.get('node/' + nid , function(data){
+	
+      });
+      
+      //return false;
       });  
 });
+
+
+//#block-views-bloque_los_mas_vistos-block a
